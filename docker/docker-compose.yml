@@ -1,0 +1,17 @@
+app:
+  ports:
+    - 80:80
+  volumes:
+    - ../public:/var/www/html
+    - ./php.ini:/etc/php/7.2/apache2/php.ini
+  image: local_my_app
+
+db:
+  image: mysql:5.7
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: teste
+    MYSQL_USER: teste
+    MYSQL_PASSWORD: teste
+  ports:
+    - "3306:3306"
